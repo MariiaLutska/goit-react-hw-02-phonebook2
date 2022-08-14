@@ -1,16 +1,26 @@
-export const App = () => {
-  return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
-      React homework template
-    </div>
+import { Component } from 'react';
+import PropTypes from 'prop-types';
+import { Box } from './Box';
+
+export class App extends Component {
+  state = {
+  contacts: [],
+  name: ''
+  }
+  render() {
+    return (
+    <Container>
+      <input
+        type="text"
+        value={this.state.name}
+  name="name"
+  pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
+  title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
+  required
+/>
+    </Container>
+    
   );
+  }
+  
 };
